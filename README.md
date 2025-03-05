@@ -30,5 +30,6 @@ print("Path to dataset files:", path)`
 
 4.在监测系统中运行模型
 将训练好的`best.pt`文件放在`/models/detect`文件夹下，运行`main.py`文件，打开监测界面，
-![image](https://github.com/user-attachments/assets/a4fe9c13-e7d4-4510-b73e-b27a25e3d2ba)
+<img width="264" alt="image" src="https://github.com/user-attachments/assets/8bb39a7c-cfbf-466b-bd6b-c12a8d79c933" />
+
 选择监测模式，即可使用训练好的模型进行鱼类监测。
