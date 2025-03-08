@@ -9,24 +9,24 @@ The `Fish Monitoring System for Marine Ranching` uses computer vision to detect 
 
 2.colab平台下载数据集
 首先登陆Kaggle的Api：
-`import json
-token = {"username":"gaojun123","key":"bef9281dc9d8baf163062f4c7e7b0e5c"}
-with open('/content/kaggle.json', 'w') as file:
-  json.dump(token, file)
-!mkdir -p ~/.kaggle
-!cp /content/kaggle.json ~/.kaggle/
-!chmod 600 ~/.kaggle/kaggle.json
-!kaggle config set -n path -v /content`
+`import json`  
+`token = {"username":"gaojun123","key":"bef9281dc9d8baf163062f4c7e7b0e5c"}`  
+`with open('/content/kaggle.json', 'w') as file:`  
+  `json.dump(token, file)`  
+`!mkdir -p ~/.kaggle`  
+`!cp /content/kaggle.json ~/.kaggle/`
+`!chmod 600 ~/.kaggle/kaggle.json`  
+`!kaggle config set -n path -v /content`
 进行数据集下载：
-`import kagglehub
-path = kagglehub.dataset_download("zehraatlgan/fish-detection")
-print("Path to dataset files:", path)`
+`import kagglehub`  
+`path = kagglehub.dataset_download("zehraatlgan/fish-detection")`  
+`print("Path to dataset files:", path)`  
 数据集分布如下：
 ![image](https://github.com/user-attachments/assets/1b3e5892-93a3-4c85-8f2f-b4f3b48973b6)
 
-3.训练模型
-`%pip install ultralytics supervision roboflow`
-!yolo task=detect mode=train model=yolo11s.pt data='/content/1/data.yaml' epochs=30 imgsz=640 plots=True
+3.训练模型  
+`%pip install ultralytics supervision roboflow`  
+`!yolo task=detect mode=train model=yolo11s.pt data='/content/1/data.yaml' epochs=30 imgsz=640 plots=True`
 
 4.在监测系统中运行模型
 将训练好的`best.pt`文件放在`/models/detect`文件夹下，运行`main.py`文件，打开监测界面，
